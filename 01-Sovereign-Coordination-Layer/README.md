@@ -1,30 +1,14 @@
 # 01 — Sovereign Coordination Layer
 
-> Trust substrate, governance fabric, and coordination protocol for the Post-Web.
+> Governance, economic alignment, and on-chain trust. Communities coordinate without intermediaries.
 
 ## Purpose
 
-This layer provides the cryptographic trust backbone, economic coordination, and governance mechanics that all other layers depend on. It is the "sovereign" layer because it enables communities to coordinate without reliance on external authorities — no centralized certificate authorities, no platform intermediaries, no trusted third parties.
+This layer provides the economic and governance substrate — tokenomics, voting, treasury management, and contract-based coordination. All decisions flow through ZK-verified mechanisms. The optional Echomix privacy transport is available for SubDAOs that require metadata protection during voting or communication.
 
 ## Components
 
-### 1a. Echomix Mixnet (Katzenpost)
-
-**Path:** `zknet-labs/katzenpost/`, `opt/`
-
-The metadata-private communication substrate. Sphinx packet encryption, cover traffic, multi-hop routing, SURB replies.
-
-| Subcomponent | Status | Location |
-|-------------|--------|----------|
-| Directory Authorities (PKI) | 🟢 Live (3 nodes, VPS) | `opt/pki/` |
-| Mix nodes (x3) | 🟢 Live (VPS) | `zknet-labs/katzenpost/server/` |
-| Gateway node | 🟢 Live (VPS) | `zknet-labs/katzenpost/server/` |
-| Service node + http_proxy plugin | 🟢 Live (VPS) | `opt/server_plugins/cbor_plugins/http_proxy/` |
-| Courier (Pigeonhole) | 🟢 Live (VPS) | `zknet-labs/katzenpost/courier/` |
-| kpclientd (tunnel) | 🟢 Live (CM4) | `opt/zknode-zerOAI/` |
-| Configuration generator | 🟢 Ready | `opt/genconfig/` |
-
-### 1b. Smart Contracts — Production (zkn-contracts)
+### 1a. Smart Contracts — Production
 
 **Path:** `zkn-contracts/contracts/`
 
@@ -40,7 +24,7 @@ The metadata-private communication substrate. Sphinx packet encryption, cover tr
 | LiquidityReserve | Uniswap LP management | 🟢 Deployed |
 | ZKNDeployer | Atomic factory deployment | 🟢 Deployed |
 
-### 1c. Smart Contracts — Beta (zkn-ecosystem)
+### 1b. Smart Contracts — Beta
 
 **Path:** `zkn-ecosystem/contracts/`
 
@@ -55,7 +39,7 @@ The metadata-private communication substrate. Sphinx packet encryption, cover tr
 | LiquidityReserve | Uniswap LP for ZKNB-stable | 🟢 Deployed |
 | ZKNEcosystemDeployer | Factory deployment | 🟢 Deployed |
 
-### 1d. Aztec Private Governance (Noir)
+### 1c. Private Governance Circuits (Noir / Aztec)
 
 **Path:** `aztec-ballot/contracts/`
 
@@ -65,7 +49,7 @@ The metadata-private communication substrate. Sphinx packet encryption, cover tr
 | Agent Registry | Private identity/agent registry | 🟡 In dev |
 | Operations | Operational logic circuits | 🟡 In dev |
 
-### 1e. DAO Governance Framework
+### 1d. DAO Governance Framework
 
 **Path:** `ZKN-SRC/src/dao/`
 
@@ -77,15 +61,20 @@ The metadata-private communication substrate. Sphinx packet encryption, cover tr
 | ZKN-Credo-GovOps-Alignment-Guide.md | Credo alignment |
 | ZKN-DAO-Phase1-Op-Checklist.md | Launch checklist |
 
-### 1f. Operator Infrastructure
+### 1e. Privacy Transport (Optional Module)
 
-**Path:** `opt/zerOS/`
+**Path:** `opt/pki/`, `zknet-labs/katzenpost/`
 
-| Script | Purpose |
-|--------|---------|
-| operator-onboarding.md | Node operator setup |
-| SECURITY-COUNCIL-KEY-CEREMONY.md | Key ceremony protocol |
-| SUBDAO-QUARTERLY-REVIEW-CYCLE.md | Review cycle |
+The Echomix mixnet — a metadata-private communication substrate using Sphinx packet encryption. Deployed as an optional privacy layer for SubDAOs and applications that require unlinkability.
+
+| Subcomponent | Status |
+|-------------|--------|
+| Directory Authorities (PKI) | 🟢 Live (3 nodes, VPS) |
+| Mix nodes (x3) | 🟢 Live (VPS) |
+| Gateway node | 🟢 Live (VPS) |
+| Service node + http_proxy plugin | 🟢 Live (VPS) |
+| Courier (Pigeonhole) | 🟢 Live (VPS) |
+| Configuration generator | 🟢 Ready |
 
 ---
 
@@ -93,15 +82,14 @@ The metadata-private communication substrate. Sphinx packet encryption, cover tr
 
 | Outbound | To Layer | Mechanism |
 |----------|----------|-----------|
-| Reward payouts | 04 ZK App Layer | On-chain → WalletShield → mixnet → zkID |
-| Governance decisions | 05 Sensor Layer | Mixnet → zerOS update channel |
-| Staking/nodes data | 02 AI Layer | On-chain data for AI analysis |
-| Proof verification | 04 ZK App Layer | ZK proof submission to ZKNGovenance |
+| Reward payouts | 04 ZK Layer | On-chain → zkID |
+| Governance decisions | 05 Sensor Layer | Encrypted channel → zerOS |
+| Proof verification | 04 ZK Layer | ZK proof submission to contracts |
 
 ---
 
 ## Status & Next
 
-- **Live:** Echomix mixnet (VPS), all EVM contracts (production + beta)
-- **In dev:** Aztec private voting, full DAO UI in clients, SubDAO treasury autonomy
-- **Gap:** No formal verification on contracts, no on-chain SubDAO registry yet, no cross-chain coordination
+- **Live:** All EVM contracts (production + beta), Echomix privacy transport
+- **In dev:** Aztec private voting, SubDAO treasury autonomy
+- **Gap:** No on-chain SubDAO registry, no cross-chain coordination, Aztec proving not in production
