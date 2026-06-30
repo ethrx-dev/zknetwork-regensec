@@ -6,49 +6,49 @@
 
 ```
 ┌──────────────────────────────────────────────────────────────────┐
-│                        USER APPLICATIONS                          │
-│  ┌──────────┐ ┌──────────┐ ┌──────────┐ ┌──────────────────┐    │
-│  │ Desktop  │ │ Browser  │ │   CLI    │ │    FarmTech      │    │
-│  │ (Tauri)  │ │ (WXT)    │ │ (Rust)   │ │    (Tauri)       │    │
-│  └────┬─────┘ └────┬─────┘ └────┬─────┘ └──────┬───────────┘    │
+│                        USER APPLICATIONS                         │
+│  ┌──────────┐ ┌──────────┐ ┌──────────┐ ┌──────────────────┐     │
+│  │ Desktop  │ │ Browser  │ │   CLI    │ │    FarmTech      │     │
+│  │ (Tauri)  │ │ (WXT)    │ │ (Rust)   │ │    (Tauri)       │     │
+│  └────┬─────┘ └────┬─────┘ └────┬─────┘ └──────┬───────────┘     │
 │       │            │            │              │                 │
 │  ┌────▼────────────▼────────────▼──────────────▼─────────────┐   │
-│  │                  04 — ZK APPLICATION LAYER                 │   │
+│  │                  04 — ZK APPLICATION LAYER                │   │
 │  │   ZK-PKI  │  ZK-Firewall  │  ZK-BOM  │  Noir Circuits     │   │
 │  │   zkID  │  Private Smart Contracts  │  ZK Verification    │   │
-│  │   ─────────────────────────────────────────────────────    │   │
-│  │   WalletShield (optional RPC privacy via Echomix)          │   │
-│  └────────────────────────────────────────────────────────────┘   │
-│                           │                                       │
-│  ┌────────────────────────▼───────────────────────────────────┐   │
-│  │                  02 — LOCAL PRIVATE AI                      │   │
-│  │   ZK-Verified Inference  │  Funion Anonymous RPC           │   │
-│  │   Gaia Edge Agents  │  Quantized Models  │  zerOAI Engine  │   │
-│  │   ─────────────────────────────────────────────────────    │   │
-│  │   Optional: mixnet transport for query unlinkability       │   │
-│  └────────────────────────┬───────────────────────────────────┘   │
-│                           │                                       │
-│  ┌────────────────────────▼───────────────────────────────────┐   │
-│  │                  03 — POST-QUANTUM STORAGE                  │   │
-│  │   ZK Proofs of Storage  │  Autonomi P2P  │  Pigeonhole     │   │
-│  │   Content-Addressed Archive  │  Encrypted Blob Store       │   │
-│  │   ─────────────────────────────────────────────────────    │   │
-│  │   Optional: mixnet SURB for anonymous storage ops          │   │
-│  └────────────────────────┬───────────────────────────────────┘   │
-│                           │                                       │
-│  ┌────────────────────────▼───────────────────────────────────┐   │
-│  │                  01 — SOVEREIGN COORDINATION LAYER           │   │
-│  │   MetaDAO / SubDAO  │  TokenomicsRouter  │  ZKNGovenance    │   │
-│  │   Staking Vaults  │  Revenue Pools  │  Grant Disbursement  │   │
-│  │   ─────────────────────────────────────────────────────    │   │
-│  │   Echomix nodes (optional privacy transport substrate)      │   │
-│  └────────────────────────┬───────────────────────────────────┘   │
-│                           │                                       │
-│  ┌────────────────────────▼───────────────────────────────────┐   │
-│  │                  05 — SENSOR LAYER                          │   │
-│  │   ZK Secure IO Controller  │  zerOS  │  CircuitTree Sensors │   │
-│  │   Micro-Greenhouse Kit  │  Mesh Transport  │  FarmTech      │   │
-│  └─────────────────────────────────────────────────────────────┘   │
+│  │   ─────────────────────────────────────────────────────   │   │
+│  │   WalletShield (optional RPC privacy via Echomix)         │   │
+│  └───────────────────────────────────────────────────────────┘   │
+│                           │                                      │
+│  ┌────────────────────────▼──────────────────────────────────┐   │
+│  │                  02 — LOCAL PRIVATE AI                    │   │
+│  │   ZK-Verified Inference  │  Funion Anonymous RPC          │   │
+│  │   Gaia Edge Agents  │  Quantized Models  │  zerOAI Engine │   │
+│  │   ─────────────────────────────────────────────────────   │   │
+│  │   Optional: mixnet transport for query unlinkability      │   │
+│  └────────────────────────┬──────────────────────────────────┘   │
+│                           │                                      │
+│  ┌────────────────────────▼──────────────────────────────────┐   │
+│  │                  03 — POST-QUANTUM STORAGE                │   │
+│  │   ZK Proofs of Storage  │  Autonomi P2P  │  Pigeonhole    │   │
+│  │   Content-Addressed Archive  │  Encrypted Blob Store      │   │
+│  │   ─────────────────────────────────────────────────────   │   │
+│  │   Optional: mixnet SURB for anonymous storage ops         │   │
+│  └────────────────────────┬──────────────────────────────────┘   │
+│                           │                                      │
+│  ┌────────────────────────▼──────────────────────────────────┐   │
+│  │                  01 — SOVEREIGN COORDINATION LAYER        │   │
+│  │   MetaDAO / SubDAO  │  TokenomicsRouter  │  ZKNGovenance  │   │
+│  │   Staking Vaults  │  Revenue Pools  │  Grant Disbursement │   │
+│  │   ─────────────────────────────────────────────────────   │   │
+│  │   Echomix nodes (optional privacy transport substrate)    │   │
+│  └────────────────────────┬──────────────────────────────────┘   │
+│                           │                                      │
+│  ┌────────────────────────▼──────────────────────────────────┐   │
+│  │                  05 — SENSOR LAYER                        │   │
+│  │ ZK Secure IO Controller  │  zerOS  │  CircuitTree Sensors │   │
+│  │   Micro-Greenhouse Kit  │  Mesh Transport  │  FarmTech    │   │
+│  └───────────────────────────────────────────────────────────┘   │
 └──────────────────────────────────────────────────────────────────┘
 ```
 
