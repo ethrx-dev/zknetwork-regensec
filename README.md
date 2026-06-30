@@ -33,4 +33,4 @@
                                     → 01 Coordination (on-chain rewards + governance)
 ```
 
-ZK is the universal trust primitive across every layer. The Echomix mixnet is an optional privacy transport module — available for layers that need metadata protection, not a substrate requirement.
+ZK is the universal trust primitive across every layer. The Echomix mixnet is an optional privacy transport module — available for layers that need metadata protection.
