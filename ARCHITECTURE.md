@@ -37,13 +37,13 @@
 │  └────────────────────────┬──────────────────────────────────┘   │
 │                           │                                      │
 │  ┌────────────────────────▼──────────────────────────────────┐   │
-│  │              01 — SECURED INTENTION COORDINATION           │   │
+│  │              01 — SECURED INTENTION COORDINATION          │   │
 │  │   Proof of Useful Work (PoUW) — regenerative consensus    │   │
 │  │   MetaDAO / SubDAO  │  Meta-Governance Protocol           │   │
 │  │   TokenomicsRouter  │  ZKNGovenance  │  Vaults            │   │
 │  │   Credo Alignment Checks  │  Intention Specification      │   │
-│  │   ─────────────────────────────────────────────────────    │   │
-│  │   Echomix nodes (optional privacy transport)               │   │
+│  │   ─────────────────────────────────────────────────────   │   │
+│  │   Echomix nodes (optional privacy transport)              │   │
 │  └────────────────────────┬──────────────────────────────────┘   │
 │                           │                                      │
 │  ┌────────────────────────▼──────────────────────────────────┐   │
