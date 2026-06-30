@@ -25,7 +25,7 @@
 │  │   ZK-Verified Inference  │  Funion Anonymous RPC          │   │
 │  │   Gaia Edge Agents  │  Quantized Models  │  zerOAI Engine │   │
 │  │   ─────────────────────────────────────────────────────   │   │
-│  │   Optional: mixnet transport for query unlinkability      │   │
+│  │   Optional: Echnomix / Pigeonhole for query unlinkability │   │
 │  └────────────────────────┬──────────────────────────────────┘   │
 │                           │                                      │
 │  ┌────────────────────────▼──────────────────────────────────┐   │
