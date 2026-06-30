@@ -4,24 +4,26 @@
 
 ---
 
-## Layer 04 — ZK Application (Core Substrate)
+## Layer 04 — ZK Stack
 
 ### Gaps
 
 | Gap | Impact |
 |-----|--------|
+| No production Noir proving service | Light clients can't generate proofs without local proving power |
 | No zkID issuance pipeline | Private identity exists as a concept but no one can actually get a zkID |
 | No ZK-Firewall deployment | Proof-based access control is designed but not implemented |
 | No ZK-BOM tooling | Supply chain verification is a whitepaper, not a tool |
-| No production Noir proving | Noir circuits written but no proving infrastructure deployed |
+| PoUW circuits not deployed | Circuit templates exist but are not wired to a verifier contract |
 
 ### What Becomes Possible
 
+- **Noir Proving as a Service** — Deploy a proving service on edge hardware — clients submit witness, get back proof. Enables mobile/light clients
 - **zkID Wallet** — Desktop/mobile app that issues zkID via Noir registration circuit + keys stored in platform TPM/enclave. Claim identity without email, phone, or government ID
 - **ZK-Firewall for DAO Roles** — "Prove you're a certified greenhouse operator without revealing your name" — middleware in FarmTech and Governance apps
 - **ZK-BOM CLI** — `zkn-bom verify firmware.bin --signer pubkey` — verify hardware provenance with ZK proofs
-- **Noir Proving as a Service** — Deploy a proving service on edge nodes — clients submit witness, get back proof. Enables mobile/light clients
-- **Proof-of-Useful-Work pipeline** — First end-to-end flow: sensor → ZK proof → on-chain verification → reward distribution
+- **PoUW Circuit Suite** — Deploy all 7 reward class circuits (food, uptime, data, education, governance, AI, storage) wired to the PoUW verifier
+- **zkApp SDK Release** — Publish ZKNFA framework for third-party developers to build ZK-enabled applications on the stack
 
 ---
 
@@ -88,22 +90,24 @@
 
 ---
 
-## Layer 05 — Sensor Layer
+## Layer 05 — Secure Hardware
 
 ### Gaps
 
 | Gap | Impact |
 |-----|--------|
+| No zerOS image built | CM4 runs standard Debian — no hardened build, no immutable rootfs, no secure boot |
+| No sensor hardware integrated | CircuitTree sensors are specified but not connected to the zymbit-secured edge |
 | No physical greenhouse deployed | The flagship product exists as specs — no real food has been grown |
-| No sensor hardware integrated | CircuitTree sensors are specified but not connected |
-| zerOS not built from spec | CM4 runs standard Debian — no hardened build |
+| zymbit tamper-response not configured | HSM can sign but cannot yet self-destruct on physical tamper |
 | Only one physical node | No multi-node deployment, no geographic distribution |
 
 ### What Becomes Possible
 
-- **First Micro-Greenhouse Prototype** — CM4 + CircuitTree sensors + grow system in a real greenhouse. First ZK proof of food production from actual sensor data
-- **zerOS Image** — Yocto/Buildroot-based hardened Linux for CM4 with secure boot, immutable rootfs
-- **Sensor → Proof Pipeline** — Wire CircuitTree → Secure IO → Noir proof → on-chain PoUW. Close the loop end-to-end
+- **zerOS Image** — Yocto/Buildroot-based hardened Linux for CM4 with secure boot, immutable rootfs, zymbit-attested boot chain
+- **Zymbit Attestation Pipeline** — Hardware-signed attestations at every stage: boot → OS load → app start → sensor reading → proof generation
+- **First Micro-Greenhouse Prototype** — CM4 + zymbit + CircuitTree sensors + grow system in a real greenhouse. First zymbit-signed ZK proof of food production
+- **Sensor → Proof Pipeline** — Wire CircuitTree → Secure IO (zymbit-attested) → Noir proof → on-chain PoUW. Close the loop end-to-end
 
 ---
 
