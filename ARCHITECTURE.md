@@ -60,7 +60,7 @@
 |-------|----------|----------------|--------|
 | **04 — ZK Application** | Private identity, proofs, access control, smart contracts | ZK-PKI, ZK-Firewall, ZK-BOM, Noir circuits, Aztec private contracts, WalletShield | 🟡 WalletShield live; ZK services in dev |
 | **02 — Local Private AI** | ZK-verified edge inference, anonymous AI | Funion protocol, Gaia agents, zerOAI engine, quantized models | 🟡 Plugins built; not yet deployed |
-| **03 — Post-Quantum Storage** | ZK proofs of storage, anonymous durable storage | Autonomi P2P, Pigeonhole courier, Sphinx/HPQC crypto, BoltDB | 🟢 Live |
+| **03 — Post-Quantum Storage** | ZK proofs of storage, anonymous durable storage | Autonomi P2P, Pigeonhole courier, Sphinx/HPQC crypto | 🟢 Live |
 | **01 — Sovereign Coordination** | Governance, economic coordination, trust substrate | MetaDAO/SubDAO contracts, TokenomicsRouter, ZKNGovenance, vaults, Echomix PKI | 🟡 Contracts live; DAO in dev |
 | **05 — Sensor Layer** | Physical world data, hardware root of trust | ZK Secure IO Controller, zerOS, CircuitTree sensors, Micro-Greenhouse Kit, FarmTech | 🟡 Hardware spec'd; FarmTech built |
 
