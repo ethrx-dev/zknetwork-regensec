@@ -17,7 +17,7 @@
 | File | Description |
 |------|-------------|
 | `ARCHITECTURE.md` | Full stack diagram, data flow, codebase mapping, layer interfaces |
-| `DEPLOYMENT.md` | Physical deployment map — zknode01 (CM4) and VPS mapped to layers |
+| `DEPLOYMENT.md` | Physical deployment map — zknode01 (SCM4) and VPS mapped to layers |
 | `NEXT.md` | Gaps, opportunities, and prioritized roadmap per layer |
 | `01-Sovereign-Coordination-Layer/` | PoUW regenerative consensus, Credo-aligned governance, Secured Intention Coordination |
 | `02-Local-Private-AI/` | Funion anonymous inference, Gaia agents, zerOAI engine |
