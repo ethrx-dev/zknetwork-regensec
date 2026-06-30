@@ -30,6 +30,53 @@ The Credo of ZKNetwork is not decorative — it is encoded into the governance m
 
 These are enforced by the **Meta-Governance Protocol**, which validates proposals against Credo-aligned schemas, runs automated AI agents to flag misalignments, and publishes periodic Governance Integrity Reports with ZK proofs of adherence.
 
+## Core Protocol: Proof of Useful Work (PoUW)
+
+PoUW is the regenerative consensus mechanism of the Secured Intention Coordination layer. Unlike proof of work (energy waste) or proof of stake (capital concentration), PoUW rewards verifiable real-world contributions. It is the economic primitive that aligns self-interest with collective benefit — every reward is backed by a ZK proof of useful action.
+
+### PoUW Reward Classes
+
+| Class | Contribution | Proof Source | ZK Circuit |
+|-------|--------------|-------------|------------|
+| **Node Operations** | Uptime, bandwidth, compute relay | Node attestation, mixnet participation | `uptime.nr` |
+| **Food Production** | Verifiable food output from Micro-Greenhouse Kits | CircuitTree sensor data | `food_output.nr` |
+| **Data Contribution** | Sensor data for AI training, climate reporting, network health | Signed sensor streams | `data_contribution.nr` |
+| **Education** | Skill completion, Learn-to-Earn module mastery | zkID credential attestation | `skill_proof.nr` |
+| **Governance** | Vote participation, proposal creation, SubDAO contributions | On-chain governance actions | `governance_proof.nr` |
+| **AI Compute** | Anonymous inference execution via Funion | Proof-of-inference circuit | `inference_proof.nr` |
+| **Storage** | Data persistence, replication, availability | Proof-of-storage circuit | `storage_proof.nr` |
+
+### PoUW Protocol Flow
+
+```
+05 Sensor Layer (data)
+    → 04 ZK Layer (Noir proof generation)
+    → 01 Secured Intention Coordination (proof submission)
+    → PoUW Verifier contract (proof verification)
+    → TokenomicsRouter (reward distribution)
+    → zkID (private reward claim)
+```
+
+### PoUW and the Credo
+
+| Credo Principle | PoUW Alignment |
+|----------------|----------------|
+| Trustlessness | Every reward is ZK-verifiable without a trusted intermediary |
+| Sovereignty | Proofs are portable — operators can exit with their contribution history |
+| Aligned With Nature | Rewards regenerative activity instead of extractive or wasteful computation |
+| Resistance to Oppression | No central authority can deny rewards — the protocol pays out automatically |
+| Intent-Centric | Rewards are based on intended, verified outcomes, not speculative position |
+
+### Code Location
+
+| Component | Path |
+|-----------|------|
+| PoUW circuits (Noir) | `zknet-labs/templates/zkapp-template/circuits/src/pouw.nr` (template) |
+| PoUW verifier (contract) | To be deployed: `ZKNGovenance.sol` extension or dedicated `PoUWVerifier.sol` |
+| PoUW engine (client) | `zknfa-framework/src/services/pouw.js` |
+| PoUW reward types | `zknfa-framework/src/services/rewards.js` |
+| NFA spec with PoUW layer | `zknet-labs/NFA-Specification.md` |
+
 ## Components
 
 ### 1a. Smart Contracts — Production
@@ -113,7 +160,8 @@ The Echomix metadata-private communication substrate — optional transport for 
 
 | Outbound | To Layer | Mechanism |
 |----------|----------|-----------|
-| Reward payouts | 04 ZK Layer | On-chain → zkID |
+| PoUW reward payouts | 04 ZK Layer (zkID) | TokenomicsRouter → zkID after proof verification |
+| PoUW proof submission | 04 ZK Layer | Noir proof → PoUW Verifier → TokenomicsRouter |
 | Governance decisions | 05 Sensor Layer | Encrypted channel → zerOS |
 | Proof verification | 04 ZK Layer | ZK proof submission to contracts |
 | Intention broadcast | All layers | On-chain intent signals → AI agent execution |

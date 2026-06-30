@@ -69,15 +69,20 @@
 |-----|--------|
 | No on-chain SubDAO registry | SubDAOs exist in docs but not as deployable contracts |
 | Credo Alignment Checks not automated | Principles exist as text but not enforced in the proposal pipeline |
+| No production PoUW verifier contract | PoUW circuits exist as templates but not deployed — no on-chain reward pipeline |
+| No proof-of-storage circuit | Storage contributions can't be verified or rewarded |
+| No proof-of-inference circuit | AI compute contributions can't be verified or rewarded |
 | Aztec private voting not deployed | Noir contracts written but no production proving |
 | No Intention Specification standard | Proposals lack structured format for AI/agent interpretation |
 | No cross-chain coordination | All contracts on Ethereum mainnet |
 
 ### What Becomes Possible
 
+- **PoUW Verifier Contract** — Deploy `PoUWVerifier.sol` that accepts Noir proofs from all 7 reward classes (node ops, food, data, education, governance, AI compute, storage) and routes rewards through TokenomicsRouter
 - **SubDAO Factory with Credo Enforcement** — Deploy a SubDAO as a single tx: treasury, voting, membership, and embedded Credo Alignment Checks that run automatically on every proposal
 - **Meta-Governance Protocol** — Automated AI agents that validate proposals against all 10 Credo principles, publishing Governance Integrity Reports with ZK proofs
 - **Intention Specification Framework** — Structured intent format for all proposals, enabling AI agent delegation and intention-to-execution audit via ZK proofs
+- **End-to-End PoUW Pipeline** — Wire sensor data → Noir proof → PoUW verifier → TokenomicsRouter → zkID reward. Close the loop from physical contribution to on-chain reward
 - **Private Governance** — Aztec private voting wired to ZK proofs: vote privately, tally verifiably
 - **Cross-chain Coordination** — SubDAOs on L2s with ZK proof bridging
 
@@ -130,13 +135,13 @@ SubDAO governs expansion with private voting (01 + 04)
 
 | # | Action | Layer | Effort |
 |---|--------|-------|--------|
-| 1 | Build Noir circuit for "proof of food output" from sensor data | 04 | 1-2 weeks |
-| 2 | Wire CircuitTree sensors to CM4, produce first sensor data stream | 05 | 1-2 weeks |
-| 3 | Deploy proving service on edge node | 04 | 1 week |
-| 4 | Ship quantized LLM to CM4, wire basic inference | 02 | 2 weeks |
-| 5 | Build zkID issuance wallet (MVP) | 04 | 2-3 weeks |
-| 6 | Deploy SubDAO factory with embedded Credo Alignment Checks | 01 | 2 weeks |
-| 7 | Build proof-of-storage Noir circuit | 03 | 1-2 weeks |
-| 8 | Deploy second node, establish mesh | 05 | 1 week |
-| 9 | Deploy Aztec private voting with ZK proofs | 01 + 04 | 3-4 weeks |
-| 10 | Build zerOS image for CM4 | 05 | 3-4 weeks |
+| 1 | Deploy PoUW Verifier contract — accept all 7 reward class proofs | 01 | 1-2 weeks |
+| 2 | Build Noir circuit for "proof of food output" from sensor data | 04 | 1-2 weeks |
+| 3 | Wire CircuitTree sensors to CM4, produce first sensor data stream | 05 | 1-2 weeks |
+| 4 | Wire first end-to-end PoUW pipeline: sensor → proof → on-chain reward | 01 + 04 + 05 | 2 weeks |
+| 5 | Deploy proving service on edge node | 04 | 1 week |
+| 6 | Ship quantized LLM to CM4, wire basic inference | 02 | 2 weeks |
+| 7 | Build zkID issuance wallet (MVP) | 04 | 2-3 weeks |
+| 8 | Build proof-of-storage Noir circuit | 03 | 1-2 weeks |
+| 9 | Deploy SubDAO factory with embedded Credo Alignment Checks | 01 | 2 weeks |
+| 10 | Deploy Aztec private voting with ZK proofs | 01 + 04 | 3-4 weeks |

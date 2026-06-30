@@ -9,7 +9,7 @@
 | 04 | **ZK Application** | Private identity, proofs, access control, private smart contracts | 🟡 WalletShield live, ZK in dev |
 | 02 | **Local Private AI** | ZK-verified edge inference, anonymous AI compute | 🟡 Plugins built, not deployed |
 | 03 | **Post-Quantum Storage** | ZK proofs of storage, anonymous durable data | 🟢 Live |
-| 01 | **Secured Intention Coordination** | Verifiable collective action, Credo-aligned governance, regenerative tokenomics | 🟡 Contracts live, DAO in dev |
+| 01 | **Secured Intention Coordination** | PoUW regenerative consensus, Credo-aligned governance, intention-anchored coordination | 🟡 Contracts live, PoUW in dev |
 | 05 | **Sensor Layer** | Physical world data, hardware root of trust | 🟡 Spec'd, hardware in dev |
 
 ## Contents
@@ -19,7 +19,7 @@
 | `ARCHITECTURE.md` | Full stack diagram, data flow, codebase mapping, layer interfaces |
 | `DEPLOYMENT.md` | Physical deployment map — zknode01 (CM4) and VPS mapped to layers |
 | `NEXT.md` | Gaps, opportunities, and prioritized roadmap per layer |
-| `01-Sovereign-Coordination-Layer/` | Credo-aligned governance, Secured Intention Coordination, tokenomics contracts |
+| `01-Sovereign-Coordination-Layer/` | PoUW regenerative consensus, Credo-aligned governance, Secured Intention Coordination |
 | `02-Local-Private-AI/` | Funion anonymous inference, Gaia agents, zerOAI engine |
 | `03-Post-Quantum-Storage/` | Autonomi P2P, Pigeonhole courier, Sphinx crypto |
 | `04-ZK-Application-Layer/` | ZK-PKI, ZK-Firewall, ZK-BOM, Noir/Aztec private contracts, WalletShield |
