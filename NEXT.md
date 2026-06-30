@@ -61,19 +61,23 @@
 
 ---
 
-## Layer 01 — Sovereign Coordination
+## Layer 01 — Secured Intention Coordination
 
 ### Gaps
 
 | Gap | Impact |
 |-----|--------|
 | No on-chain SubDAO registry | SubDAOs exist in docs but not as deployable contracts |
+| Credo Alignment Checks not automated | Principles exist as text but not enforced in the proposal pipeline |
 | Aztec private voting not deployed | Noir contracts written but no production proving |
+| No Intention Specification standard | Proposals lack structured format for AI/agent interpretation |
 | No cross-chain coordination | All contracts on Ethereum mainnet |
 
 ### What Becomes Possible
 
-- **SubDAO Factory** — Deploy a SubDAO as a single tx: treasury, voting, membership, all at once
+- **SubDAO Factory with Credo Enforcement** — Deploy a SubDAO as a single tx: treasury, voting, membership, and embedded Credo Alignment Checks that run automatically on every proposal
+- **Meta-Governance Protocol** — Automated AI agents that validate proposals against all 10 Credo principles, publishing Governance Integrity Reports with ZK proofs
+- **Intention Specification Framework** — Structured intent format for all proposals, enabling AI agent delegation and intention-to-execution audit via ZK proofs
 - **Private Governance** — Aztec private voting wired to ZK proofs: vote privately, tally verifiably
 - **Cross-chain Coordination** — SubDAOs on L2s with ZK proof bridging
 
@@ -131,7 +135,7 @@ SubDAO governs expansion with private voting (01 + 04)
 | 3 | Deploy proving service on edge node | 04 | 1 week |
 | 4 | Ship quantized LLM to CM4, wire basic inference | 02 | 2 weeks |
 | 5 | Build zkID issuance wallet (MVP) | 04 | 2-3 weeks |
-| 6 | Deploy SubDAO factory contract | 01 | 2 weeks |
+| 6 | Deploy SubDAO factory with embedded Credo Alignment Checks | 01 | 2 weeks |
 | 7 | Build proof-of-storage Noir circuit | 03 | 1-2 weeks |
 | 8 | Deploy second node, establish mesh | 05 | 1 week |
 | 9 | Deploy Aztec private voting with ZK proofs | 01 + 04 | 3-4 weeks |

@@ -37,11 +37,12 @@
 │  └────────────────────────┬──────────────────────────────────┘   │
 │                           │                                      │
 │  ┌────────────────────────▼──────────────────────────────────┐   │
-│  │                  01 — SOVEREIGN COORDINATION LAYER        │   │
-│  │   MetaDAO / SubDAO  │  TokenomicsRouter  │  ZKNGovenance  │   │
-│  │   Staking Vaults  │  Revenue Pools  │  Grant Disbursement │   │
-│  │   ─────────────────────────────────────────────────────   │   │
-│  │   Echomix nodes (optional privacy transport substrate)    │   │
+│  │              01 — SECURED INTENTION COORDINATION           │   │
+│  │   MetaDAO / SubDAO  │  Meta-Governance Protocol           │   │
+│  │   TokenomicsRouter  │  ZKNGovenance  │  Vaults            │   │
+│  │   Credo Alignment Checks  │  Intention Specification      │   │
+│  │   ─────────────────────────────────────────────────────    │   │
+│  │   Echomix nodes (optional privacy transport)               │   │
 │  └────────────────────────┬──────────────────────────────────┘   │
 │                           │                                      │
 │  ┌────────────────────────▼──────────────────────────────────┐   │
@@ -60,8 +61,8 @@
 |-------|----------|----------------|--------|
 | **04 — ZK Application** | Private identity, proofs, access control, smart contracts | ZK-PKI, ZK-Firewall, ZK-BOM, Noir circuits, Aztec private contracts, WalletShield | 🟡 WalletShield live; ZK services in dev |
 | **02 — Local Private AI** | ZK-verified edge inference, anonymous AI | Funion protocol, Gaia agents, zerOAI engine, quantized models | 🟡 Plugins built; not yet deployed |
-| **03 — Post-Quantum Storage** | ZK proofs of storage, anonymous durable storage | Autonomi P2P, Pigeonhole courier, Sphinx/HPQC crypto | 🟢 Live |
-| **01 — Sovereign Coordination** | Governance, economic coordination, trust substrate | MetaDAO/SubDAO contracts, TokenomicsRouter, ZKNGovenance, vaults | 🟡 Contracts live; DAO in dev |
+| **03 — Post-Quantum Storage** | ZK proofs of storage, anonymous durable storage | Autonomi P2P, Pigeonhole courier, Sphinx/HPQC crypto, BoltDB | 🟢 Live |
+| **01 — Secured Intention Coordination** | Verifiable collective action, Credo-aligned governance, regenerative tokenomics | MetaDAO/SubDAO contracts, TokenomicsRouter, ZKNGovenance, Meta-Governance Protocol, vaults | 🟡 Contracts live; DAO in dev |
 | **05 — Sensor Layer** | Physical world data, hardware root of trust | ZK Secure IO Controller, zerOS, CircuitTree sensors, Micro-Greenhouse Kit, FarmTech | 🟡 Hardware spec'd; FarmTech built |
 
 ---
@@ -78,6 +79,8 @@
 
 No layer depends on the mixnet. Each layer uses ZK as its trust primitive. The mixnet (Echomix) is an optional transport module available to any layer that needs metadata privacy — WalletShield, Funion, or Pigeonhole — but it is not a substrate requirement.
 
+Layer 01 is governed by the **Secured Intention Coordination Protocol**: every proposal, vote, and economic signal is an intention that is cryptographically committed, ZK-verified against the Credo, and executed without intermediaries.
+
 ---
 
 ## Codebase Mapping
@@ -87,7 +90,7 @@ No layer depends on the mixnet. Each layer uses ZK as its trust primitive. The m
 | **04 — ZK Layer** | `aztec-ballot/` (Noir contracts), `opt/apps/walletshield/` (RPC privacy), `zknfa-framework/` (ZK app framework), `ZKN-SRC/src/core/` (ZK-PKI, ZK-Firewall specs), `zknetwork-client-command/` (WalletShield UI) |
 | **02 — AI** | `opt/zknode-zerOAI/` (zerOAI engine), `zknet-0AI/opt/server_plugins/ai_inference/` (Funion plugins), `zknet-farmtech/` (Gaia AI page) |
 | **03 — Storage** | `zknet-labs/katzenpost/courier/` (Pigeonhole), `opt/zknode-zerOAI/` (ant-node), `opt/` (BoltDB) |
-| **01 — Coordination** | `zkn-contracts/` (governance, tokenomics, vaults), `zkn-ecosystem/` (beta contracts), `opt/pki/` (authority server), `opt/genconfig/`, `ZKN-SRC/src/dao/` (governance docs) |
+| **01 — Secured Intention Coordination** | `zkn-contracts/` (governance, tokenomics, vaults), `zkn-ecosystem/` (beta contracts), `opt/pki/` (authority server), `opt/genconfig/`, `ZKN-SRC/src/dao/` (governance docs, Credo alignment guide), `aztec-ballot/` (private voting circuits) |
 | **05 — Sensor** | `zknet-farmtech/` (FarmTech app), `ZerOSv2/` (OS spec), `ZKN-SRC/src/ops/` (Micro-Greenhouse specs) |
 
 ---
